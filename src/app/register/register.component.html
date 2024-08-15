@@ -1,0 +1,61 @@
+<div class="container py-5">
+    
+    <form class="row g-3" #registerForm="ngForm" (ngSubmit)="addUser()">
+        <div class="col-12">
+            <label for="inputRole" class="form-label">Role</label>
+            <select id="inputRole" class="form-select" name="role" ngModel required #role="ngModel">
+                <option>Teacher</option>
+                <option>Student</option>
+            </select> 
+            @if(role.invalid && (role.touched || registerForm.submitted)){
+                <small>Role is required</small>
+            } 
+        </div>
+        <div class="col-12">
+          <label for="inputUsername" class="form-label">Username</label>
+          <input type="email" class="form-control" id="inputUsername" name="username" #username="ngModel" required ngModel>
+          @if(username.invalid && (username.touched || registerForm.submitted)){
+            <small>Username is required</small>
+            } 
+        </div>
+        <div class="col-12">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" id="inputEmail4" name="emailAddress" #emailAddress="ngModel" required email ngModel>
+          @if(emailAddress.invalid && (emailAddress.touched || registerForm.submitted)){
+            <small>There is no valid Email</small>
+            } 
+        </div>
+        <div class="col-12">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input type="password" class="form-control" id="inputPassword4"name="password"#password="ngModel" required ngModel>
+          @if(password.invalid && (password.touched || registerForm.submitted)){
+            <small>Password is required</small>
+            } 
+        </div>
+        <div class="col-12">
+          <label for="inputCountry" class="form-label">Country</label>
+          <select class="form-select" id="inputCountry"name="country" #country="ngModel" ngModel required>
+            <option value="egypt">Egypt</option>
+          </select>
+          @if(country.invalid && (country.touched || registerForm.submitted)){
+            <small>Country is required</small>
+            } 
+        </div>
+        <div class="col-12">
+          <label for="inputState" class="form-label">State</label>
+          <select id="inputState" class="form-select"name="state"#state="ngModel" ngModel required>
+            <option>Mansoura</option>
+            <option>Aswan</option>
+            <option>Cairo</option>
+            <option>Alexandria</option>
+          </select>
+          @if(state.invalid && (state.touched || registerForm.submitted)){
+            <small>State is required</small>
+            } 
+        </div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary w-50 m-auto d-block">Register</button>
+        </div>
+      </form>
+</div>

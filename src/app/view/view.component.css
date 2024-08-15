@@ -1,0 +1,19 @@
+.container{
+    position: relative;
+    height: 79.7vh;
+}
+.box{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

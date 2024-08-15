@@ -1,0 +1,30 @@
+<div class="container py-5 my-5">
+    <form (ngSubmit)="checkUser()" #loginForm="ngForm">
+        <div class="col-12 mb-3">
+            <label for="inputRole" class="form-label">Role</label>
+            <select id="inputRole" class="form-select border-dark" name="role" ngModel required #role="ngModel">
+                <option>Teacher</option>
+                <option>Student</option>
+            </select>
+            @if(role.invalid && (role.touched || loginForm.submitted)){
+              <small>Role is required</small>
+              }      
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputUsername" class="form-label">Username</label>
+          <input type="text" class="form-control" id="exampleInputUsername" name="username" #username="ngModel" required ngModel>
+          @if(username.invalid && (username.touched || loginForm.submitted)){
+            <small>Username is required</small>
+            } 
+          <div class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1"name="password"#password="ngModel" required ngModel>
+          @if(password.invalid && (password.touched || loginForm.submitted)){
+            <small>Password is required</small>
+            } 
+        </div>
+        <button type="submit" class="btn btn-primary w-50 d-block m-auto">Submit</button>
+      </form>
+</div>

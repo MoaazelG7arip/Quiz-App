@@ -1,0 +1,7 @@
+input{
+    padding: 10px;
+    border: 1px solid #aaa;
+}
+.group input{
+    width: 23%;
+}

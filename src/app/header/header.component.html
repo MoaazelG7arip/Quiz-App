@@ -1,0 +1,19 @@
+<header class="text-bg-dark">
+    <nav class="container d-flex justify-content-between py-3">
+        <div class="logo fw-bold">
+            Quiz <span class="text-bg-light p-2 rounded-3 ms-1">App</span>
+        </div>
+        <a routerLink="/home" class="home-1 text-decoration-none text-light">Home</a>
+        @if(studentLogged || teacherLogged){
+            <a routerLink="/userinformation" class="home-1 text-decoration-none text-light">User Information</a>
+        }
+        <div class="login">
+            @if (teacherLogged || studentLogged) {
+                <a class="text-decoration-underline text-light" (click)="logOut()">Log out</a>
+            } @else {
+                <a class="text-decoration-underline text-light mx-2" routerLink="/login">Log In</a>
+                <a class="text-decoration-underline text-light" routerLink="/register">Register</a>
+            }            
+        </div>
+    </nav>
+</header>

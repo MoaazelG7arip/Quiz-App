@@ -1,0 +1,19 @@
+.home-1{
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+.home-1:hover{
+    transform: translateX(5px);
+    -webkit-transform: translateX(5px);
+    -moz-transform: translateX(5px);
+    -ms-transform: translateX(5px);
+    -o-transform: translateX(5px);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+a{
+    cursor: pointer;
+}

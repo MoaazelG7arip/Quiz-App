@@ -1,0 +1,33 @@
+.home{
+    background: url('./../../../public/e-quiz.jpg') rgba(0, 0, 0, 0.6) no-repeat ;
+    background-size: cover;
+    background-blend-mode: darken;
+}
+.one{
+    height: 100vh;
+    position: relative;
+}
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    padding: 100px;
+    border-radius: 10px;
+}
+button{
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+button:hover{
+    transform: translateX(10px);
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    -o-transform: translateX(10px);
+}
+

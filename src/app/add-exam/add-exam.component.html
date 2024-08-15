@@ -1,0 +1,71 @@
+<div class="container lead">
+  <h2>The Full Exam</h2>
+  <table class="table table-dark">
+    <thead>
+      <tr class="text-center">
+        <th>choice 1</th>
+        <th>choice 2</th>
+        <th>choice 3</th>
+        <th>choice 4</th>
+        <th>answer</th>
+        <th>update</th>
+        <th>remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(question of fullExam; track $index){
+      <tr>
+        <td colspan="5">{{ $index + 1 }} : {{ question.question }}</td>
+        <td rowspan="2">
+          <button class="btn btn-primary" (click)="updateQuestion(question)">
+            #
+          </button>
+        </td>
+        <td rowspan="2">
+          <button class="btn btn-danger" (click)="removeQuestion(question)">
+            -
+          </button>
+        </td>
+      </tr>
+      <tr class="text-center">
+        <td>{{ question.choices["choice1"] }}</td>
+        <td>{{ question.choices["choice2"] }}</td>
+        <td>{{ question.choices["choice3"] }}</td>
+        <td>{{ question.choices["choice4"] }}</td>
+
+        <td class="text-bg-success">{{ question.answer }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+
+  <div class="mb-2">
+    <button
+      type="button"
+      routerLink="/addexam/addquestion"
+      class="btn"
+      [disabled]="examSubmitted"
+      [ngClass]="{
+        'disabled btn-secondary': examSubmitted,
+        'btn-success': !examSubmitted
+      }"
+    >
+      Add Question
+    </button>
+  </div>
+  <div>
+    @if(!examSubmitted){
+    <button class="btn btn-primary" (click)="submitExam()">Submit Exam</button>
+    } @else() {
+    <button class="btn btn-primary" (click)="unsubmitExam()">
+      Unsubmit Exam
+    </button>
+    }
+  </div>
+</div>
+@if(questionUpdating){
+<app-update-question
+  [theFullQuestion]="theFullQuestion"
+  (onDataUpdated)="updateValue($event)"
+></app-update-question>
+}

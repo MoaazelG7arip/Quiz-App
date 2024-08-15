@@ -1,0 +1,20 @@
+<div class="content text-bg-light">
+
+    <div class="container lead fw-normal">
+        <form #updateForm="ngForm" (ngSubmit)="updateQuestion()" class="py-5">
+            <label class="col-12 mb-3" for="question">Update The Question</label>
+            <input class="col-12 mb-3" type="text" name="question" id="question" [(ngModel)]="theFullQuestion.question">
+            <label class="col-12 mb-3" for="choice1">Enter the Choices</label>
+            <div class="d-flex justify-content-between group" ngModelGroup="choices">
+                <input class="mb-3" type="text" name="choice1" id="choice1" [(ngModel)]="theFullQuestion.choices.choice1">
+                <input class="mb-3" type="text" name="choice2" id="choice2" [(ngModel)]="theFullQuestion.choices.choice2">
+                <input class="mb-3" type="text" name="choice3" id="choice3" [(ngModel)]="theFullQuestion.choices.choice3">
+                <input class="mb-3" type="text" name="choice4" id="choice4" [(ngModel)]="theFullQuestion.choices.choice4">
+            </div>
+            <label class="col-12 mb-3" for="answer">Enter Correct Choice</label>
+            <input class="col-12 mb-3" type="text" name="answer" id="answer" [(ngModel)]="theFullQuestion.answer">
+            <button class="col-6 mb-3 m-auto d-block btn btn-outline-primary rounded-0" type="submit">Update Question</button>
+        </form>
+    </div>
+
+</div>
