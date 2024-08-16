@@ -28,6 +28,7 @@ export class StudentService {
     window.localStorage.setItem('student',JSON.stringify(this.student));
     this.studentLogged.next(true);
     window.localStorage.setItem('studentlogged',JSON.stringify(true));
+    window.localStorage.setItem('studentinfo',JSON.stringify(new User(role,username,email,password,country,city)))
   }
   checkStudent(username:string,password:string){
     const getStd = this.student.find((ele)=>{

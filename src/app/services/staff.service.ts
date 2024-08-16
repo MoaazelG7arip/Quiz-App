@@ -26,7 +26,9 @@ export class StaffService {
     this.teacher.push(new User(role,username,email,password,country,city))
     window.localStorage.setItem('teacher',JSON.stringify(this.teacher))
     this.teacherLogged.next(true);
-    window.localStorage.setItem('teacherlogged',JSON.stringify(true));  }
+    window.localStorage.setItem('teacherlogged',JSON.stringify(true));  
+    window.localStorage.setItem('teacherinfo',JSON.stringify(new User(role,username,email,password,country,city)))
+  }
   checkTeacher(username:string,password:string){
     const getTech = this.teacher.find((ele)=>{
       return ele.username === username && ele.password === password;
